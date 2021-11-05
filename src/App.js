@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, HashRouter } from "react-router-dom";
 import ShopItemFunc from "./components/ShopItemFunc/ShopItemFunc";
 import ShopItemFuncClass from "./components/ShopItemFuncClass/ShopItemFuncClass";
 import Calendar from "./components/Calendar/Calendar";
@@ -27,7 +27,7 @@ const itemClass = {
 
 export default function App() {
   return (
-    <Router>
+    <HashRouter>
       <div>
         <nav>
           <ul>
@@ -57,7 +57,7 @@ export default function App() {
           </Route>
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
