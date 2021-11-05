@@ -27,7 +27,7 @@ const itemClass = {
 
 export default function App() {
   return (
-    <HashRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
           <ul>
