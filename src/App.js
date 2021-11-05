@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ShopItemFunc from "./components/ShopItemFunc/ShopItemFunc";
 import ShopItemFuncClass from "./components/ShopItemFuncClass/ShopItemFuncClass";
+import Calendar from "./components/Calendar/Calendar";
+import moment from "moment";
 
 const item = {
   brand: "Tiger of Sweden",
@@ -30,6 +32,9 @@ export default function App() {
         <nav>
           <ul>
             <li>
+              <Link to="/Calendar">Calendar</Link>
+            </li>
+            <li>
               <Link to="/FuncComponents">FuncComponents</Link>
             </li>
             <li>
@@ -41,6 +46,9 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/Calendar">
+            <CalendarComponents />
+          </Route>
           <Route path="/FuncComponents">
             <FuncComponents />
           </Route>
@@ -81,4 +89,10 @@ function ClassComponents() {
       </div>
     </div>
   );
+}
+function CalendarComponents() {
+  const now = moment();
+
+  // внутри компонента App:
+  return <Calendar date={now} />;
 }
